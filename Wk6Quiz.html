@@ -11,7 +11,7 @@
 
 
 
-<title>Week 1 Quiz</title>
+<title>Week 6 Quiz</title>
 
 <script src="site_libs/header-attrs-2.12/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -284,257 +284,175 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Week 1 Quiz</h1>
+<h1 class="title toc-ignore">Week 6 Quiz</h1>
 
 </div>
 
 
-<p><strong>Question 1</strong> Antibiotics are commonly using to treat sinus infections. Alternatively a steroid solution can be sprayed into the nose. In a trial, 50 children with a sinus infection were randomly assigned to receive an antibiotic tablet or a steroid nasal spray. The severity and length of the sinus infection was recorded for the children after 2 weeks.</p>
-<p>All children with a sinus infection are best described as:</p>
+<p><strong>Question 1</strong></p>
+<p>People suffering from sacroiliac joint dysfunction can be given a steroid injection to relieve pain.<br />
+After receiving an injection, 15 out of 34 patients reported a reduction in pain.</p>
+<p>Calculate the standard error:</p>
+<p>[Give your answer to 3 decimal places]</p>
+<p><strong>Answer</strong>: 0.085 <span class="math display">\[
+\hat{p} = \frac{15}{34} = 0.44117647\\
+\hat{q} = 1 - \hat{p} = 0.55882353\\
+SE(\hat{p}) = \sqrt{\frac{\hat{p}\hat{q}}{n}}\\
+= \sqrt{\frac{0.441 \times 0.559}{34}}\\
+= 0.085
+\]</span></p>
+<p><strong>Question 2</strong></p>
+<p>For a 95% confidence interval, choose the most accurate value of z*.</p>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" />
-a parameter</li>
+0.025</li>
 <li><input type="checkbox" disabled="" />
-a sample</li>
+2</li>
 <li><input type="checkbox" disabled="" />
-a response variable</li>
+1.65</li>
 <li><input type="checkbox" disabled="" checked="" />
-the target population</li>
+1.96</li>
 <li><input type="checkbox" disabled="" />
-a statistic</li>
+2.33</li>
 </ul>
-<p>The average length of the sinus infection for the children in the study is best described as a: (1 mark)</p>
+<pre><code>&gt; abs(qnorm(0.05/2))
+[1] 1.959964</code></pre>
+<p><strong>Question 3</strong></p>
+<p>People suffering from sacroiliac joint dysfunction can be given a steroid injection to relieve pain.<br />
+After receiving an injection, 11 out of 38 patients reported a reduction in pain.</p>
+<p>If you were to create a 90% confidence interval for the true proportion of sufferers of the condition whose symptoms should be improved by the injection, what is the <strong>margin of error?</strong></p>
+<p>[Giver your answer to 3 decimal places]</p>
+<p><strong>Answer:</strong> 0.118</p>
+<pre><code>&gt; Q3data &lt;- prop.test(x=11, n=38, conf.level=0.90, correct=FALSE)
+
+    1-sample proportions test without continuity correction
+
+data:  11 out of 38, null probability 0.5
+X-squared = 6.7368, df = 1, p-value = 0.009444
+alternative hypothesis: true p is not equal to 0.5
+90 percent confidence interval:
+ 0.1857105 0.4212226
+sample estimates:
+        p 
+0.2894737
+
+&gt; ME &lt;- round((0.4212226 - 0.1857105) / 2, 3)
+&gt; ME
+[1] 0.118</code></pre>
+<p><strong>Question 4</strong></p>
+<p>In a random sample of 75 Labrador Retriever adult dogs, 60 were found to be overweight. The calculated 90% confidence interval from this sample result for the true proportion of adult Labrador Retrievers that are overweight is 0.724 to 0.876. Are significantly more than 70% of adult Labrador Retrievers overweight?</p>
+<p>Select the following statements that are <strong>true.</strong></p>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" />
-variable</li>
-<li><input type="checkbox" disabled="" />
-parameter</li>
+We can be 95% sure that the percentage of all the sampled adult Labradors that are overweight is between 72.4% and 87.6%.</li>
 <li><input type="checkbox" disabled="" checked="" />
-summary statistic</li>
-<li><input type="checkbox" disabled="" />
-sample</li>
-<li><input type="checkbox" disabled="" />
-none of the above</li>
-</ul>
-<p><strong>Question 2</strong> Suppose that information recorded for students studying a particular subject in Trimester 1 includes student ID, name, gender, post code, mobile phone number, course enrolled in, campus of enrolment, distance travelled to university and numerical assignment marks. Which of the following best describes “why”?</p>
-<ul class="task-list">
+A different random sample of adult Labradors will probably result in a different 90% confidence interval.</li>
 <li><input type="checkbox" disabled="" checked="" />
-For record keeping</li>
+Based on this sample, we can be 90% sure that the percentage of all adult Labradors that are overweight is between 72.4% and 87.6%.</li>
 <li><input type="checkbox" disabled="" />
-To determine whether people living at home with their parents travel greater distances to university</li>
+Since 0.7 (70%) is below the lower bound of the confidence interval, there is evidence that significantly more than 70% of adult Labradors are overweight.</li>
 <li><input type="checkbox" disabled="" />
-To determine whether ethnicity has an impact on university marks</li>
-<li><input type="checkbox" disabled="" />
-To compare different styles of assessment</li>
-<li><input type="checkbox" disabled="" />
-To see which university has the highest achieving students</li>
+Since the sample proportion is 80%, significantly more than 70% of all Labradors must be overweight.</li>
 </ul>
-<p><strong>Question 3</strong> Suppose that information recorded for students studying a particular subject in Trimester 1 includes student ID, name, gender, post code, mobile phone number, course enrolled in, campus of enrolment, distance travelled to university and numerical assignment marks.</p>
-<p>Which of the following best describes “Who”?</p>
+<p><strong>Question 5</strong></p>
+<p>A random sample of 75 children from a region of rural Victoria found that 50 children consume at least one sugary soft drink per day. Construct a 90% confidence interval from this sample result for the true proportion of children consuming at least one sugary soft drink per day.</p>
+<p>Choose the correct answer.</p>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" />
-Student ID</li>
+0.593 to 0.807</li>
+<li><input type="checkbox" disabled="" />
+0.560 to 0.774</li>
 <li><input type="checkbox" disabled="" checked="" />
-Students studying a particular subject</li>
+0.578 to 0.757</li>
 <li><input type="checkbox" disabled="" />
-Lecturer</li>
+0.667 to 0.900</li>
 <li><input type="checkbox" disabled="" />
-Name</li>
-<li><input type="checkbox" disabled="" />
-A university</li>
+0.489 to 0.711</li>
 </ul>
-<p><strong>Question 4</strong> Suppose that information recorded for fish caught along a section of coast consists of the location name, species, weight, length, gender, water temperature and the season. Which of the following have been included in the information recorded and should be treated as categorical variables?</p>
+<pre><code>&gt; Q5data &lt;- prop.test(x=50, n=75, conf.level= 0.90, correct=TRUE)
+&gt; Q5data
+
+    1-sample proportions test with continuity correction
+
+data:  50 out of 75, null probability 0.5
+X-squared = 7.68, df = 1, p-value = 0.005584
+alternative hypothesis: true p is not equal to 0.5
+90 percent confidence interval:
+ 0.5658618 0.7550183
+sample estimates:
+        p 
+0.6666667
+
+&gt; round(Q5data$conf.int, 3)
+[1] 0.566 0.755
+attr(,&quot;conf.level&quot;)
+[1] 0.9</code></pre>
+<p><strong>Question 6</strong></p>
+<p>From a random sample of 80 adult Labrador Retrievers, 55 were found to be overweight.</p>
+<p>Is there significant evidence that more than 65% of adult Labrador Retrievers are overweight?</p>
+<p>Select the appropriate hypotheses, where p is the proportion of adult Labrador Retrievers that are overweight.</p>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" checked="" />
-species</li>
+<span class="math inline">\(H_0: p = 0.65\)</span></li>
+<li><input type="checkbox" disabled="" />
+<span class="math inline">\(H_0: p ≠ 0.65\)</span></li>
 <li><input type="checkbox" disabled="" checked="" />
-gender</li>
+<span class="math inline">\(H_a: p &gt; 0.65\)</span></li>
 <li><input type="checkbox" disabled="" />
-weight</li>
+<span class="math inline">\(H_a: p = 0.65\)</span></li>
 <li><input type="checkbox" disabled="" />
-water temperature</li>
+<span class="math inline">\(H_0: p = 0.6875\)</span></li>
 <li><input type="checkbox" disabled="" />
-length</li>
-<li><input type="checkbox" disabled="" checked="" />
-season</li>
-<li><input type="checkbox" disabled="" checked="" />
-location</li>
-<li><input type="checkbox" disabled="" />
-fish colour</li>
+<span class="math inline">\(H_a: p \ne 0.65\)</span></li>
 </ul>
-<p><strong>Question 5</strong> Suppose that information recorded for fish caught along a section of coast consists of the location name, species, weight, length, gender, water temperature and the season. Which of the following have been included in the information recorded and should be treated as numerical variables?</p>
-<ul class="task-list">
-<li><p><input type="checkbox" disabled="" />
-water salinity</p></li>
-<li><p><input type="checkbox" disabled="" checked="" />
-weight</p></li>
-<li><p><input type="checkbox" disabled="" />
-season</p></li>
-<li><p><input type="checkbox" disabled="" />
-species</p></li>
-<li><p><input type="checkbox" disabled="" checked="" />
-length</p></li>
-<li><p><input type="checkbox" disabled="" />
-gender</p></li>
-<li><p><input type="checkbox" disabled="" />
-location coordinates</p></li>
-<li><p><input type="checkbox" disabled="" />
-air temperature</p><blockquote>
-<p>You need to select data that is both numerical, <strong>and</strong> is included in the variables listed so be sure to read carefully.</p>
-</blockquote></li>
-</ul>
-<p><strong>Question 6</strong> Information recorded for patients included name, gender, blood pressure, weight, height, age (in years), number of children, and diabetes risk (low, moderate or high).</p>
-<p>Match the variable to the correct data type.</p>
-<table>
-<thead>
-<tr class="header">
-<th>Variable</th>
-<th>Data Type</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Diabetes Risk</td>
-<td>Categorical (ordinal)</td>
-</tr>
-<tr class="even">
-<td>Height</td>
-<td>Numerical (continuous)</td>
-</tr>
-<tr class="odd">
-<td>Gender</td>
-<td>Categorical (nominal)</td>
-</tr>
-<tr class="even">
-<td>Number of Children</td>
-<td>Numerical (discrete)</td>
-</tr>
-</tbody>
-</table>
 <p><strong>Question 7</strong></p>
-<p>Blood Pressure</p>
-<p>A company held a blood pressure screening clinic for its employees. The results are summarised in the table below by age group and blood pressure level:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Blood Pressure</th>
-<th><span class="math inline">\(&lt; 30\)</span></th>
-<th><span class="math inline">\(30 - 49\)</span></th>
-<th><em><span class="math inline">\(\ge 50\)</span></em></th>
-<th>Total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Low</strong></td>
-<td>82</td>
-<td>18</td>
-<td>42</td>
-<td>142</td>
-</tr>
-<tr class="even">
-<td><strong>Mid</strong></td>
-<td>59</td>
-<td>42</td>
-<td>34</td>
-<td>135</td>
-</tr>
-<tr class="odd">
-<td><strong>High</strong></td>
-<td>47</td>
-<td>82</td>
-<td>60</td>
-<td>189</td>
-</tr>
-<tr class="even">
-<td><strong>Total</strong></td>
-<td>188</td>
-<td>142</td>
-<td>136</td>
-<td><strong>466</strong></td>
-</tr>
-</tbody>
-</table>
-<p>What percentage of the company’s employees are aged 30-49?</p>
-<p><strong>Answer:</strong> <span class="math inline">\(\frac{142}{466} \times 100 = 30.5\)</span></p>
-<p><strong>Question 8</strong></p>
-<p>For the following scatterplot, choose the best description of the apparent relationship between the variables.</p>
-<div class="figure">
-<img src="/Users/malford/Documents/BPscyhSci/SIT191/Notes/SIT191%20Notes/Images/Wk1Images/Q8Img.png" alt="" />
-<p class="caption">Wk1Quiz</p>
-</div>
+<p>In a random sample of 80 Labrador Retriever adult dogs, 66 were found to be overweight. Are more than 70% of adult Labradors overweight?</p>
+<p>Calculate the z test statistic required for the hypothesis test.</p>
+<p>Choose the closest answer.</p>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" />
-no apparent relationship</li>
+-1.96</li>
+<li><input type="checkbox" disabled="" />
+1.95</li>
+<li><input type="checkbox" disabled="" />
+-2.44</li>
 <li><input type="checkbox" disabled="" checked="" />
-reasonably strong, negative and linear</li>
+0.93</li>
 <li><input type="checkbox" disabled="" />
-reasonably strong, positive and linear</li>
-<li><input type="checkbox" disabled="" />
-clearly curved</li>
-<li><input type="checkbox" disabled="" />
-very weak negative and linear</li>
+2.94</li>
 </ul>
-<p><strong>Question 9</strong> For the following data, use SPSS or other technology to produce a scatterplot, then choose the correct option.</p>
-<table>
-<thead>
-<tr class="header">
-<th><em>x</em></th>
-<th><em>y</em></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>15</td>
-<td>24</td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>25</td>
-</tr>
-<tr class="odd">
-<td>17</td>
-<td>21</td>
-</tr>
-<tr class="even">
-<td>18</td>
-<td>20</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>26</td>
-</tr>
-<tr class="even">
-<td>18</td>
-<td>16</td>
-</tr>
-<tr class="odd">
-<td>19</td>
-<td>19</td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td>21</td>
-</tr>
-<tr class="odd">
-<td>15</td>
-<td>22</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>20</td>
-</tr>
-</tbody>
-</table>
+<pre><code>&gt; p &lt;- 66/80
+&gt; qnorm(p, lower.tail=TRUE)
+[1] 0.9345893</code></pre>
+<p><strong>Question 8</strong></p>
+<p>For a two sided hypothesis test with a calculated z test statistic of 2.31, what is the P-value?</p>
 <ul class="task-list">
-<li><p><input type="checkbox" disabled="" />
-<img src="/Users/malford/Documents/BPscyhSci/SIT191/Notes/SIT191%20Notes/Images/Wk1Images/scatter%201.png" alt="scatter 1" /></p></li>
-<li><p><input type="checkbox" disabled="" />
-<img src="/Users/malford/Documents/BPscyhSci/SIT191/Notes/SIT191%20Notes/Images/Wk1Images/scatter2.png" alt="scatter2" /></p></li>
-<li><p><input type="checkbox" disabled="" checked="" />
-<img src="/Users/malford/Documents/BPscyhSci/SIT191/Notes/SIT191%20Notes/Images/Wk1Images/scatter3.png" alt="scatter3" /></p></li>
-<li><p><input type="checkbox" disabled="" />
-<img src="/Users/malford/Documents/BPscyhSci/SIT191/Notes/SIT191%20Notes/Images/Wk1Images/scatter4.png" alt="scatter4" /></p></li>
+<li><input type="checkbox" disabled="" />
+0.05</li>
+<li><input type="checkbox" disabled="" />
+0.0104</li>
+<li><input type="checkbox" disabled="" checked="" />
+0.0208</li>
+<li><input type="checkbox" disabled="" />
+0.9896</li>
+<li><input type="checkbox" disabled="" />
+0.0107</li>
+</ul>
+<pre><code>&gt; 2*pnorm(2.31, lower.tail=FALSE)
+[1] 0.02088815</code></pre>
+<p><strong>Question 9</strong></p>
+<p>In a random sample of children, 65% consumed at least one sugary soft drink per day. Is there evidence that the proportion of children consuming at least one sugary soft drink per day is significantly different to 80%? Using a calculated test statistic value of z = -2.23 and P-value = 0.0258, choose the most correct conclusion (use α = 0.05).</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Reject Ha since the P-value &gt; 0.05 – there is no evidence that the proportion of children who consume at least one sugary soft drink per day is different to 80%.</li>
+<li><input type="checkbox" disabled="" />
+Fail to reject H0 since the P-value &gt; 0.01 – there is evidence that the proportion of children who consume at least one sugary soft drink per day is different to 80%.</li>
+<li><input type="checkbox" disabled="" checked="" />
+Reject H0 since the P-value &lt; 0.05 – there is evidence that the proportion of children who consume at least one sugary soft drink per day is significantly different to 80%.</li>
+<li><input type="checkbox" disabled="" />
+Reject H0 since the P-value &gt; 0.05 – there is evidence that the proportion of children who consume at least one sugary soft drink per day is significantly different to 80%.</li>
+<li><input type="checkbox" disabled="" />
+Fail to reject H0 since the P-value &lt; 0.05 – there is no evidence that the proportion of children who consume at least one sugary soft drink per day is significantly different to 80%.</li>
 </ul>
 
 
