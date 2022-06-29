@@ -1,12 +1,26 @@
 name: "SIT191"
-title: "SIT191"
-description: |
-  SIT191
-output_dir: "docs"
 navbar:
+  title: "SIT191"
   right:
-    - text: "Week 1 Quiz"
+    - text: "Week 1"
       href: index.html
-    - text: "Week 2 Quiz"
-      href: Week2.html
-output: html_document
+    - text: "Week 2"
+      href: Wk2Quiz.html
+    - text: "Week 3"
+      href: Wk3Quiz.html
+    - text: "Week 4"
+      href: Wk4Quiz.html
+    - text: "Week 5"
+      href: Wk5Quiz.html
+    - text: "Week 6"
+      href: Wk6Quiz.html
+    - text: "Week 7"
+      href: Wk7Quiz.html
+    - text: "Week 8"
+      href: Wk8Quiz.html
+    - text: "Week 9"
+      href: Wk9Quiz.html
+    - text: "Week 9"
+      href: Wk9Quiz.html
+    - text: "Formulae"
+      href: Formulae.html

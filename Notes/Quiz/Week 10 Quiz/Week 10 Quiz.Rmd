@@ -1,0 +1,213 @@
+---
+title: "Week 10 Quiz"
+author: "Michael Alford"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+Q3 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Data/Q3.csv", header = TRUE, sep = ",")
+Q5 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Data/Q5.csv", header = TRUE, sep = ",")
+Q7 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Data/Q7.csv", header = TRUE, sep = ",")
+Q8 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Data/Q8.csv", header = TRUE, sep = ",")
+Q10 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Data/Q10.csv", header = TRUE, sep = ",")
+```
+
+**Question 1**
+
+Shown are four scatterplots. The calculated correlations are $0.008,\ -0.986,\ 0.671,\ -0.589$. Match the correlations to the correct plot.
+
+![$0.671$](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Images/scatter2a.png)
+
+![$0.986$](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Images/scatter2b.png)
+
+![$0.008$](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Images/scatter2c.png)
+
+![$-0.589$](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Images/scatter2d.png)
+
+**Question 2**
+
+From the SPSS output below, what is the correlation value?
+
+![corr1](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Images/corr 1.png)
+
+- [ ]    $4.22199$
+- [ ]    $87.4%$
+- [x]    $0.935$
+- [ ]    $0.874$
+- [ ]    $0.868$
+
+**Question 3**
+
+For the following data, use SPSS or other technology to calculate the correlation between the variables.
+
+```{r}
+knitr::kable(Q3, "pipe")
+round(cor(Q3$x, Q3$y), 3)
+```
+ 
+- [ ]    $-0.887$
+- [ ]    $-887$
+- [x]    $-0.867$
+- [ ]    $-0.786$
+- [ ]    $0.87$
+
+**Question 4**
+
+For a random sample of 15 adults, tibia length and height were recorded with the SPSS linear regression analysis shown below.  Researchers are investigating whether tibia length can be used to predict height.
+
+![Tibia Height](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Images/tibia height.png)
+
+Which of the following gives the correct linear regression equation?
+
+- [x]    $\hat{height} = −39.619 + 4.983 \times tibia$
+- [ ]    $\hat{height} = 39.619−4.983 \times tibia$
+- [ ]    $\hat{tibia} = 4.983 \times height − 39.619$
+- [ ]    $\hat{height} = −39.619 + 20.203 \times tibia$
+- [ ]    $\hat{tibia} = 4.983 + 0.457 \times height$
+
+**Question 5**
+
+Wild bears were caught and anesthetised so that various measurements could be made. In particular, the usefulness of a bear’s chest circumference to predict its weight was of interest. A random sample of 10 bears was used, with the chest and weight measurements shown below, as well as the linear regression analysis.
+
+```{r}
+knitr::kable(Q5, "pipe")
+bearlm <- lm(Weight ~ Chest, data = Q5)
+summary(bearlm)
+```
+
+
+What can be said about the y-intercept ($-251.948$) in the context of this study? (Select all that apply)
+
+- [x]    The y-intercept would indicate the chest size of a bear with zero weight.
+- [ ]    The y-intercept is close to a number of the observed data values and therefore seems reliable.
+- [ ]    The y-intercept is meaningful in that it would represent the weight of bears when they are born.
+- [ ]    The y-intercept would indicate the weight of a bear with zero chest circumference.  
+- [x]    The y-intercept is based on extrapolation and therefore is not reliable.
+- [x]    The y-intercept is not meaningful for this data as it would not make sense to have a bear with zero chest size or negative weight. 
+
+**Question 6**
+
+For a random sample of 15 adults, tibia (shinbone) length and height were recorded (in cm) with the SPSS linear regression analysis shown below.  Researchers are investigating whether tibia length can be used to predict height.
+
+![tibia height](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Images/tibia height.png)
+
+Which option is the correct interpretation of the slope of the regression equation?
+
+- [ ]    An increase in tibia length of 1cm corresponds with an increase in height of 4.983cm.
+- [x]    An increase in height of 1cm corresponds with an increase in tibia length of 4.983cm.
+- [ ]    An increase in tibia length of 1cm corresponds with an increase in height of 39.619cm.
+- [ ]    A decrease in tibia length of 39.619cm corresponds with an increase in height of 4.983cm.
+- [ ]    An increase in tibia length of 1cm corresponds with a decrease in height of 4.983cm.
+
+**Question 7**
+
+For the following data, use SPSS to calculate the regression equation to predict y from x, then select the correct answer.
+
+```{r}
+knitr::kable(Q7, "pipe")
+Q7lm <- lm(y ~ x, data = Q7)
+summary(Q7lm)
+```
+
+- [ ]    $\hat{y} = −6.283 + 0.533x$
+- [x]    $\hat{y} = −4.861 + 1.605x$
+- [ ]    $\hat{y} = 1.605 − 4.861x$
+- [ ]    $\hat{y} = 12.794 − 1.715x$
+- [ ]    $\hat{y} = 4 + 0.577x$
+
+**Question 8**
+
+Information on a number of flights from a particular airport was gathered, including the distance of the flight and how much it cost. Using this data, a scatterplot was generated along with a regression model.
+
+```{r}
+knitr::kable(Q8, "pipe")
+Q8lm <- lm(Cost ~ Distance, data = Q8)
+summary(Q8lm)
+plot(Q8$Distance ~ Q8$Cost, xlab = "Distance (km)", ylab = "Cost ($)")
+abline(Q8lm)
+```
+
+Based on this, indicate your answers to the following questions. 
+
+a.    The explanatory variable is
+
+- [x]    Distance
+- [ ]    Cost
+
+b.    The response variable is
+
+- [ ]    Distance
+- [x]    Cost
+
+c.    Based on the scatterplot, is the relationship:
+
+- [x]    positive
+- [ ]    negative 
+
+d.    Give the correlation of distance with cost. (give your answer to 3 decimal places, e.g. $0.453\ or\ -0.453$ if the relationship is negative)
+
+```{r}
+  round(cor(Q8$Distance, Q8$Cost), 3)
+```
+
+e.    What is the $R^2$ value? (give your answer as a percentage to 1 decimal place, e.g. 23.1, without the % sign)
+
+- [x]   54.6
+
+f.    The linear equation you would use to estimate the cost from distance is $\hat{y} = a + bx$ where:
+
+- [ ]   $a$ is 0.739 and $b$ is 0.564
+- [ ]   $a$ is 185.874 and $b$ is 16.811
+- [x]   $a$ is 185.874 and $b$ is 0.075
+- [ ]   $a$ is 35.16288 and $b$ is 185.874
+
+g.    Use the equation to predict the cost of a flight that is 800km. (give your answer to 2 decimal places without the $ sign)
+
+$$
+  \begin{aligned}
+    \hat{y} &= a + bx\\
+    &= 185.874 + 0.075 \times 800\\
+    &= 245.87
+  \end{aligned}
+$$
+
+h.    Is this answer:
+
+- [x]    reliable because it is not based on extrapolation or
+- [ ]    unreliable because it is based on extrapolation?
+
+**Question 9**
+
+For a random sample of 15 adults, tibia (shinbone) length and height were recorded with the SPSS linear regression analysis given below.  Researchers are investigating whether tibia length can be used to predict height.
+
+![Tibia Height](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Week 10/Week 10 Quiz/Images/tibia height.png)  
+
+Is the relationship between tibia length and height significant using $\alpha = 0.01$?
+Select the correct option. 
+
+- [ ]    $t = 11.198\ and\ P = 0.000$ so the relationship is significant
+- [x]    $t = 11.198\ and\ P = 0.000$ so the relationship is not significant
+- [ ]    $t = 11.198\ and\ P = 0.024$ so the relationship is not significant
+- [ ]    $t = -2.461\ and\ P = 0.024$ so the relationship is not significant
+- [ ]    $t = -2.461\ and\ P = 0.012$ so the relationship is significant
+
+**Question 10**
+
+For the following data, use SPSS to obtain the regression output to predict y from x.
+
+```{r}
+knitr::kable(Q10, "pipe")
+Q10lm <- lm(y ~ x, data = Q10)
+summary(Q10lm)
+```
+
+Is there a significant relationship between the variables at $\alpha = 0.05$?
+From your output, select the test statistic value and P for this hypothesis test.
+
+- [ ]    $t = 3.246\ and\ P = 0.012$ (significant relationship)
+- [ ]    $t = -1.861\ and\ P = 0.100$ (no significant relationship)
+- [ ]    $t = 10.066\ and\ P = 0.100$ (no significant relationship)
+- [ ]    $t = 10.066\ and\ P = 0.05$ (no significant relationship)
+- [x]    $t = 10.066\ and\ P < 0.001$ (significant relationship)

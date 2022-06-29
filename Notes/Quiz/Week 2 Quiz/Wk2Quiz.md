@@ -1,0 +1,178 @@
+**Question 1**
+Runners returning to activity after lower leg fractures are to be allocated to two different training programs.  Half of each group will follow a high calcium diet, and the other half will follow a high protein diet.
+
+- [x] Bone density measurements were taken for all subjects.
+- [ ] Which of the following designs would be likely to give the most reliable results?
+- [ ] Runners are randomly allocated to either of the training programs and then also randomly allocated to either diet. 
+- [ ] Runners are randomly allocated to either of the training programs and then the females follow the high calcium diet and the males the high protein diet.
+- [ ] Runners get to decide themselves whether they would like to be part of the high protein or high calcium diet group.  They also choose the training program that best suits them.
+
+
+
+**Question 2**
+For the following report about a statistical study, select the best option for each part.
+Just enter the letter. 
+
+Following a week of heavy rain, ocean water samples were collected by environmental researchers from a selection of beaches in the bay around Melbourne and then tested for contaminants.
+
+The Population of interest:
+
+- [ ] People living in Melbourne and the bay area
+- [x] Beaches in the bay around Melbourne
+- [ ] Australia's beaches
+- [ ] Environmental researchers
+
+Population parameter of interest:
+
+- [ ] Whether or not it is dangerous to swim
+- [x] Average level of contamination of the bay water around Melbourne
+- [ ] Average number of people exposed to pollution
+- [ ] average rainfall
+
+Sample:
+
+- [x] The water samples that were collected from the selected beaches
+- [ ] Every beach around the bay
+- [ ] Each of the water samples collected from beaches where rain fell
+- [ ] Not stated
+
+The sample statistic:
+
+- [ ] Average number of people exposed to pollution
+- [ ] The contamination level of one sample
+- [ ] Whether one of the beaches is safe to swim at
+- [x] Average level of contamination of the water samples
+
+A case:
+
+- [ ] Average number of people exposed to pollution
+- [ ] Whether one of the beaches is safe to swim at
+- [x] A water sample from a selected beach
+- [ ] Average level of contamination of the water samples
+
+Variable:
+
+- [x] Contamination
+- [ ] Whether one of the beaches is safe to swim at
+- [ ] The average contamination level of the whole bay
+- [ ] Average level of contamination of the water samples
+
+
+
+**Question 3**
+Consider the brief report of the statistical research below.
+
+Runners returning to activity after lower leg fractures were randomly allocated to two different training programs.  Half of each group also followed a high calcium diet.  Bone density measurements were taken for all subjects.
+
+Which of the following best describes the type of study conducted?
+
+- [ ] An observational study (prospective)
+- [x] An experiment
+- [ ] An observational study (retrospective)
+
+
+
+**Question 4**
+Consider the brief report of the statistical research below:
+
+The medical records of retired basketball athletes who experienced either hand or knee injuries were collected, as well as the length of their sporting career.  The average career lengths of those who experienced either a knee injury, hand injury, or both, were calculated and compared.
+
+Which of the following best describes the type of study conducted?
+
+
+- [ ] An observational study (prospective)
+- [x] An observational study (retrospective)
+- [ ] An experimental study
+
+
+
+**Question 5**
+A survey of students found that they are more likely to get colds when they are stressed. The study also noted that students exercise less and eat more junk food when they are stressed.
+
+Choose all answers that apply to this study.
+
+- [x] Stress is the explanatory variable and colds the response variable.
+- [ ] Exercise is the response variable and colds the explanatory variable.
+- [ ] Stress is used here as a blocking variable.
+- [x] Junk food consumption and exercise are possible lurking/confounding variables that could explain the observed association between colds and stress.
+- [ ] This is an observational study so it is not possible to establish a causal relationship between stress and colds.
+- [x] It is possible to establish a causal relationship between stress and colds for this experiment.
+
+
+
+**Question 6**
+A doctor wants to select a sample of his adult patients. He randomly selects patients from each of the age brackets 18-30, 31-50, 51-70, 71-100.  Which option best describes the sampling method?
+
+
+- [ ] Simple Random
+- [ ] Multistage
+- [x] Stratified
+- [ ] Convenience
+- [ ] Cluster
+
+
+
+**Question 7**
+A lecturer want to select a sample of students studying her subject. From a list of all the prac groups, a particular prac is selected at random and all the students in that prac class are selected. Which option best describes the sampling method?
+
+
+- [ ] Simple Random
+- [x] Multistage
+- [ ] Cluster
+- [ ] Stratified
+- [ ] Volunteer
+
+
+
+**Question 8**
+For the following research study:
+
+A company studied the effects of storage time and storage temperature on the deterioration of a particular product.
+Three different temperatures were used, and 5 different storage times.
+
+Which of the following are factors in the experiment?
+
+- [ ] Product's deterioration
+- [x] Storage temperature
+- [ ] Company's products
+- [x] Storage time
+
+
+
+**Question 9**
+Cats suffering with kidney disease were randomly assigned to diets differing in protein and moisture to see if any diet was more effective in slowing the progression of the disease and allowing the cat to live longer. Measurements of serum creatinine, blood urea nitrogen, potassium and calcium were made before and after the cats followed the diet for three months. The cats were assigned to a protein level diet (13% or 18%) with one third of each protein group given canned food, one third given dry food and the remaining third a mixture of canned and dry food.
+
+Identify the factors in this study, and the levels of each.
+
+- [ ] protein and moisture (1 level each)
+- [x] protein (2 levels) and moisture (3 levels)
+- [ ] serum creatinine, blood urea nitrogen, potassium and calcium (1 level each)
+- [ ] protein (2 levels) and moisture (1 level)
+- [ ] protein (3 levels) and moisture (2 levels)
+
+
+
+**Question 10**
+Cats suffering with kidney disease were randomly assigned to diets differing in protein and moisture to see if any diet was more effective in slowing the progression of the disease and allowing the cat to live longer. Measurements of serum creatinine, blood urea nitrogen, potassium and calcium were made before and after the cats followed the diet for three months. The cats were assigned to a protein level diet (13% or 18%) with one half of each protein group given canned food and the other half dry food.
+
+How many different treatment groups are there?
+
+- [x] 4
+- [ ] 3
+- [ ] 5
+- [ ] 2
+- [ ] 6
+
+
+
+**Question 11**
+Consider the following research study:
+
+People suffering from migraines were given either a pain relief tablet or a placebo tablet.  Half of each group was also given a glass of iced water.
+Migraine symptoms for each participant were observed after 1 hour.
+
+Which of the following statements concerning blinding are true?
+
+- [x] It would be possible to conduct the experiment so that the researchers were blind to the treatments given when analysing the results.
+- [ ] This study can definitely be set up as double-blind.
+- [ ] It would be possible to conduct the experiment so that participants are blind to any treatment they are given.
