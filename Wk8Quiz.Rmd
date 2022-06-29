@@ -1,5 +1,6 @@
 ---
 title: "Week 8 Quiz"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

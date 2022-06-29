@@ -241,46 +241,61 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">SIT191</a>
+      <a class="navbar-brand" href="index.html"></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="index.html">Week 1</a>
-</li>
-<li>
-  <a href="Wk2Quiz.html">Week 2</a>
-</li>
-<li>
-  <a href="Wk3Quiz.html">Week 3</a>
-</li>
-<li>
-  <a href="Wk4Quiz.html">Week 4</a>
-</li>
-<li>
-  <a href="Wk5Quiz.html">Week 5</a>
-</li>
-<li>
-  <a href="Wk6Quiz.html">Week 6</a>
-</li>
-<li>
-  <a href="Wk7Quiz.html">Week 7</a>
-</li>
-<li>
-  <a href="Wk8Quiz.html">Week 8</a>
-</li>
-<li>
-  <a href="Wk9Quiz.html">Week 9</a>
-</li>
-<li>
-  <a href="Wk9Quiz.html">Week 9</a>
-</li>
-<li>
-  <a href="Formulae.html">Formulae</a>
-</li>
+        
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="index.html">Unit Guide</a>
+</li>
+<li>
+  <a href="Readings.html">Reading List</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Content
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="index.html">Week 1</a>
+    </li>
+    <li>
+      <a href="Wk2Quiz.html">Week 2</a>
+    </li>
+    <li>
+      <a href="Wk3Quiz.html">Week 3</a>
+    </li>
+    <li>
+      <a href="Wk4Quiz.html">Week 4</a>
+    </li>
+    <li>
+      <a href="Wk5Quiz.html">Week 5</a>
+    </li>
+    <li>
+      <a href="Wk6Quiz.html">Week 6</a>
+    </li>
+    <li>
+      <a href="Wk7Quiz.html">Week 7</a>
+    </li>
+    <li>
+      <a href="Wk8Quiz.html">Week 8</a>
+    </li>
+    <li>
+      <a href="Wk9Quiz.html">Week 9</a>
+    </li>
+    <li>
+      <a href="Wk10Quiz.html">Week 10</a>
+    </li>
+    <li>
+      <a href="Formulae.html">Formulae</a>
+    </li>
+  </ul>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -295,7 +310,47 @@ $(document).ready(function () {
 </div>
 
 
-<div class="line-block">                |Confidence Interval |Test statistic and Hypotheses | | —————-|————————————————————|———————————————————— | |<strong>1 Prop</strong>|<span class="math display">\[\hat{p} \pm z^* \times \sqrt{\frac{\hat{p}\hat{q}}{n}}\]</span><br><br><code>prop.test(x=12, n=79, p=0.14, alternative=“greater”, correct=FALSE)</code>|<span class="math display">\[z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0q_0}{n}}}\\\\H_0: p = p_0\\H_a: p \ne p_0\ or\ p &gt; p_0\ or\ p &lt; p_0\]</span>| |<strong>1 Mean</strong>|<span class="math display">\[\bar{x} \pm t^*_{n-1} \times \frac{s}{\sqrt{n}}\]</span><br><br><code>t.test(vlt$prize, mu=13.13, alternative="less”, conf.level=0.90)</code>|<span class="math display">\[t = \frac{\bar{x}-\mu_0}{\frac{s}{\sqrt{n}}}\\\\H_0: \mu=\mu_0\\H_a: \mu \ne \mu_0\ or\ \mu &gt; \mu_0\ or\ \mu &lt; \mu_0\]</span>| |<strong>2 Prop</strong>|<span class="math display">\[(p_1 - p_2) \pm z^* \times \sqrt{\frac{\hat{p}_1\hat{q}_1}{n_1} + \frac{\hat{p}_2\hat{q}_2}{n_2}}\]</span><br><br><code>prop.test(x=c(467, 407), n=c(667, 558), alternative="two.sided", correct=FALSE)</code>|<span class="math display">\[z = \frac{p_1 - p_2}{\sqrt{\frac{\hat{p}_{pooled}\hat{q}_{pooled}}{n_1}}+\frac{\hat{p}_{pooled}\hat{q}_{pooled}}{n_2}}\\\\H_0: p_1 =p_2\ or\ p_1 - p_2=0\\H_a: p_1\ne p_2\ or\ p_1&gt;p_2\ or\ p_1&lt;p_2\]</span>| |<strong>2 Means</strong>|<span class="math display">\[(\bar{x}_1-\bar{x}_2) \pm t^*_{n_1+n_2-2} \times \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span><br><br><code>t.test(Moore$conformity[Moore$partner.status=="high"], Moore$conformity[Moore$partner.status=="low"], alternative="greater", var.equal=TRUE)</code>|<span class="math display">\[t = \frac{\bar{x}_1-\bar{x}_2}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\\\\H_0: \mu_1 = \mu_2\ or\ \mu_1 - \mu_2 =0\\H_a: \mu_1 \ne \mu_2\ or\ \mu_1&gt;\mu_2\ or\ \mu_1 &lt; \mu_2\]</span>| |<strong>Paired Means</strong>|<span class="math display">\[\bar{d} \pm t^*_{n-1} \times \frac{s_d}{\sqrt{n}}\]</span><br><br><code>t.test(x=sleep$extra[sleep$group==1], y=sleep$extra[sleep$group==2], alternative="two.sided", paired=TRUE)</code>|<span class="math display">\[t = \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}}\\\\H_0: \mu_d=0\\H_a:\mu_d \ne0\ or\ \mu_d &gt;0\ or\ \mu_d &lt;0\]</span>|</div>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Confidence Interval</th>
+<th>Test statistic</th>
+<th>Hypothesis Testing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1 Prop</strong></td>
+<td><span class="math display">\[\hat{p} \pm z^* \times \sqrt{\frac{\hat{p}\hat{q}}{n}}\]</span><br><br><code>prop.test(x=12, n=79, p=0.14, alternative=“greater”, correct=FALSE)</code></td>
+<td><span class="math display">\[z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0q_0}{n}}}\\\\H_0: p = p_0\\H_a: p \ne p_0\ or\ p &gt; p_0\ or\ p &lt; p_0\]</span></td>
+</tr>
+<tr class="even">
+<td><strong>1 Mean</strong></td>
+<td><span class="math display">\[\bar{x} \pm t^*_{n-1} \times \frac{s}{\sqrt{n}}\]</span><br><br><code>t.test(vlt$prize, mu=13.13, alternative="less”, conf.level=0.90)</code></td>
+<td><span class="math display">\[t = \frac{\bar{x}-\mu_0}{\frac{s}{\sqrt{n}}}\\\\H_0: \mu=\mu_0\\H_a: \mu \ne \mu_0\ or\ \mu &gt; \mu_0\ or\ \mu &lt; \mu_0\]</span></td>
+</tr>
+<tr class="odd">
+<td><strong>2 Prop</strong></td>
+<td><span class="math display">\[(p_1 - p_2) \pm z^* \times \sqrt{\frac{\hat{p}_1\hat{q}_1}{n_1} + \frac{\hat{p}_2\hat{q}_2}{n_2}}\]</span><br><br><code>prop.test(x=c(467, 407), n=c(667, 558), alternative="two.sided", correct=FALSE)</code></td>
+<td><span class="math display">\[z = \frac{p_1 - p_2}{\sqrt{\frac{\hat{p}_{pooled}\hat{q}_{pooled}}{n_1}}+\frac{\hat{p}_{pooled}\hat{q}_{pooled}}{n_2}}\\\\H_0: p_1 =p_2\ or\ p_1 - p_2=0\\H_a: p_1\ne p_2\ or\ p_1&gt;p_2\ or\ p_1\]</span></td>
+</tr>
+<tr class="even">
+<td><strong>2 Means</strong></td>
+<td><span class="math display">\[(\bar{x}_1-\bar{x}_2) \pm t^*_{n_1+n_2-2} \times \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span><br><br><code>t.test(Moore$conformity[Moore$partner.status=="high"], Moore$conformity[Moore$partner.status=="low"], alternative="greater", var.equal=TRUE)</code></td>
+<td><span class="math display">\[t = \frac{\bar{x}_1-\bar{x}_2}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\\\\H_0: \mu_1 = \mu_2\ or\ \mu_1 - \mu_2 =0\\H_a: \mu_1 \ne \mu_2\ or\ \mu_1&gt;\mu_2\ or\ \mu_1 &lt; \mu_2\]</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Paired Means</strong></td>
+<td><span class="math display">\[\bar{d} \pm t^*_{n-1} \times \frac{s_d}{\sqrt{n}}\]</span><br><br><code>t.test(x=sleep$extra[sleep$group==1], y=sleep$extra[sleep$group==2], alternative="two.sided", paired=TRUE)</code></td>
+<td><span class="math display">\[t = \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}}\\\\H_0: \mu_d=0\\H_a:\mu_d \ne0\ or\ \mu_d &gt;0\ or\ \mu_d &lt;0\]</span></td>
+</tr>
+</tbody>
+</table>
 
 
 

@@ -1,5 +1,6 @@
 ---
 title: "Week 4 Quiz"
+output: html_document
 ---
 
 **Question 1:**
