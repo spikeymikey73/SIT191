@@ -1,0 +1,290 @@
+---
+title: "SIT191 Problem Solving Task 3"
+author: "Michael Alford 221147552"
+Date: 04 October, 2021
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+
+Q3_2 <- read.csv(file = "/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Assessment 3/Data/Q3_2.csv", sep = ",")
+Q3_5 <- read.csv(file = "/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Assessment 3/Data/Q3_5.csv", header = TRUE, sep = ",")
+Q3_7 <- read.csv(file = "/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Assessment 3/Data/Q3_7.csv", header = TRUE, sep = ",")
+```
+Due: by 8pm Monday October 4th\newline
+Total marks: 80, Weighting: 20%
+
+##   Question 3.1
+
+**The International Tennis Federation (ITF) requires that tennis balls have an average diameter of 6.70 centimetres. Tennis balls being produced by one manufacturer are tested to see if they meet the ITF standard. A random sample of 15 tennis balls is taken and the diameters (in cm) are shown below:**
+
+```{r}
+tballs <- c(6.74, 6.64, 6.71, 6.57, 6.91, 6.65, 6.80, 6.72, 6.50, 6.62, 6.54, 6.85, 6.73, 6.79, 6.67)
+print(tballs)
+```
+
+**a. Create a 98% confidence interval for the mean diameter of tennis balls produced by the manufacturer and interpret your interval in context.**
+
+```{r}
+  tballs_test <- t.test(tballs, mu=6.7, conf.level = 0.98, alternative = "less")
+```
+
+  $$
+    \begin{aligned}
+      \bar{x} &\pm t^*_{n-1} \times \frac{s}{\sqrt{n}}\\
+      6.696 &\pm 0.135 \times \frac{0.114}{\sqrt{15}}\\
+      &= 6.62cm, 6.77cm
+    \end{aligned}
+  $$
+  _Based on the tested sample, we can be 98% confident that all manufactured tennis are between 6.62cm to 6.77cm in diameter._
+  
+**b. Perform a hypothesis test to see if there is evidence that the manufacturer’s tennis balls are smaller than the ITF standard. Use $\alpha=0.01$.**
+
+```{r}
+  tballs_test <- t.test(tballs, mu=6.7, conf.level = 0.99, alternative = "less")
+```
+
+  $$
+    \begin{aligned}
+      H_0: \mu = \mu_0\\
+      H_a: \mu < \mu_0
+    \end{aligned}
+  $$
+
+  $$
+    \begin{aligned}
+      t &= \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}\\
+      &= \frac{6.696 - 6.7}{\frac{0.114}{\sqrt{15}}}\\
+      &= -0.136
+    \end{aligned}
+  $$
+_0.25 < p-value < 0.5_
+
+_In this case, the p-value is greater than 0.01, confirming that the result is not significant._
+
+**c. Explain how your confidence interval and hypothesis test conclusion support each other.**
+
+  _The confidence interval of the range of sizes includes the mean and are therefore, not all smaller than the 6.7cm requirement, while the hypothesis test confirms that only 25% to 50% of manufactured tennis balls are smaller than the 6.7cm requirement._
+
+**d. Are the assumptions required for the test you performed met? Discuss briefly.**
+
+  _Yes, the data gathered satisfies the requirements of independence and normality._
+
+##   Question 3.2
+
+**Exercise vigorous enough to increase heart rate to between 50% and 85% of maximum heart rate is recommended for good health. Does boxing high intensity interval training (HIIT) or cardio tennis increase heart rate the most?**
+
+**Ten subjects participated in two different 45 minute exercise classes – boxing HIIT and cardio tennis. At the end of each class their heart rate (beats per minute) was recorded.**
+
+```{r}
+  knitr::kable(Q3_2)
+```
+
+**a.    Should the results best be analysed as paired data or two independent means? Explain.**
+
+  _The data in this example should be analysed as two independent means as we are analysing the differences in the effect side of the relationship. Paired data on the other hand, would specifically analyse the cause and effect relationship before and after a single scenario exclusively._
+
+**b.    Briefly describe how this experiment could be designed to help avoid biased results.**
+
+  _The best design method for this experiment would be to include the same participants for each exercise, with a suitable rest period in between._
+
+**c.    Is there a significant difference in heart rate between boxing HIIT and cardio tennis? Carry out a hypothesis test using $\alpha = 0.05$, showing all steps.**
+
+$$
+  \begin{aligned}
+    t &= \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}}\\
+    &= \frac{6.0}{\frac{10.154}{\sqrt{10}}}\\
+    &= 1.87
+  \end{aligned}
+$$
+
+$$
+  \begin{aligned}
+    H_0: \mu_d = 0\\
+    H_a: \mu \ne 0
+  \end{aligned}
+$$
+_$0.05 < p-value < 0.10$_
+
+_Reject null hypothesis as p-value is between 0.05 and 0.10 confirming the differences are not 0._
+
+**d.    Calculate a 95% confidence interval for the difference in heart rate between the two classes and interpret your interval in context.**
+
+```{r}
+  fitness <- t.test(x=Q3_2$Boxing.HIIT, y=Q3_2$Cardio.Tennis, conf.level=0.95, alternative="two.sided", paired=TRUE)
+```
+
+$$
+  \begin{aligned}
+    \bar{d} &\pm t^*_{n-1} \times \frac{s_d}{\sqrt{n}}\\
+    6.0 &\pm 1.87 \times \frac{10.154}{\sqrt{10}}\\
+    &-1.26,\ 13.26
+  \end{aligned}
+$$
+_We can be 95% confident that the differences in heart rate between the two exercise regimes are from -1.26 to 13.26bpm._
+
+**Based on your hypothesis test result, did you expect to find 0 in the interval? Explain.**
+
+_Yes, as the zero value indicates that there is no difference to heart rate between the two exercise regimes for some people_
+
+##   Question 3.3
+
+**Resting heart rate was compared for a random sample of healthy adult men and women of the same age. The 15 women sampled had a resting heart rate of 78 beats per minute with standard deviation 5 bpm. The resting heart rate for the sampled 18 men was 71 bpm with standard deviation 3 bpm.**
+
+**a.    Should the results best be analysed as paired data or two independent means? Explain.**
+
+  _These results should be analysed as independent as the test subjects are from different groups (i.e. men and women)._
+
+**b.    Do women of this age have a significantly higher resting heart rate than men? Carry out a hypothesis test with a significance level of 5%, including all steps.**
+
+$$
+  \begin{aligned}
+    t &= \frac{(78 - 71)}{\sqrt{\frac{5^2}{15}+\frac{3^2}{18}}}\\
+    &= \frac{7}{1.414}\\
+    &= 4.95
+  \end{aligned}
+$$
+__
+
+**c.    Create a 90% confidence interval for the mean difference in heart rate, and interpret the interval in context.**
+
+$$
+  \begin{aligned}
+    (\bar{x}_1-\bar{x}_2) &\pm t^*_{n_1+n_2-2} \times \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\\
+    (78 - 71) &\pm 1.697 \times \sqrt{\frac{5^2}{15}+\frac{3^2}{18}}\\
+    & = 4.502, 9.498
+  \end{aligned}
+$$
+
+**d.    Is the confidence interval consistent with your hypothesis test conclusion? Explain.**
+
+**e.    Is it necessary for the test you used that resting heart rate is normally distributed? Explain.**
+_Yes, the results of both variables need to both be normally distributed to ensure the data are comparable._
+
+##   Question 3.4
+
+**A hospital is comparing three different drugs to determine if there is a difference in the number of hours of pain relief each provides on average for patients with pain after surgery. The mean pain relief (in hours) for each drug and SPSS ANOVA output are given below.**
+
+|Drug|Mean pain relief|
+|----|----------------|
+|1|8.28|
+|2|7.52|
+|3|8.36|
+
+![Table 1](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Assessment 3/Images/3.4 Table 1.png)
+![Table 1](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Assessment 3/Images/3.4 Table 2.png)
+
+**a.  Does the average length of pain relief differ between any of the drugs? State the appropriate hypotheses for this test.**
+
+**b.  Give the values of the test statistic and P-value, and your conclusion for the test. Use $\alpha = 0.05$.**
+
+**c.  Would it be appropriate to perform a Bonferroni test to see if any of the drugs differ in the mean hours of pain relief? Explain.**
+
+**d.   Describe a well designed experiment to obtain this data.**
+
+##   Question 3.5
+
+**At an athletics meet, organisers were interested in whether the standard of the competitors running in the 400m event varied significantly between heats. There were four heats for the 400m event, with 6 competitors in heats 1 and 3, 8 runners in heat 2 and 7 in heat 4. The time (in seconds) each runner took to complete the event was recorded, with the data given in the following table.**
+
+```{r}
+  knitr::kable(Q3_5)
+```
+
+**a.    State the null and alternative hypotheses required to test if the average 400m running times were significantly different between any of the heats.**
+
+$$
+  \begin{aligned}
+    H_0: \mu_1 = \mu_2 = \mu_3 = \mu_4\\
+    H_a: Not\ all\ means\ are\ equal
+  \end{aligned}
+$$
+
+**b.    Carry out the ANOVA (with technology) and report the test statistic and P-value.**
+
+  _The test statistic and P-value are 10.67 and 0.0001 respectively_
+
+**c.    Write a brief conclusion of the ANOVA analysis, in context. Use $\alpha = 0.05$.**
+
+  _We can be 95% certain that the means of the 4 groups studied are not the same._
+
+**d.    Carry out the Bonferroni’s multiple comparisons (if appropriate) and summarise the results.**
+
+```{r}
+  Q3_5.Test <- stack(Q3_5)
+  AOV_Results <- aov(Q3_5.Test$values ~ Q3_5.Test$ind, data = Q3_5.Test)
+  summary(AOV_Results)
+```
+
+##   Question 3.6
+
+**At a station in Antarctica, researchers measured flipper length and body mass for different penguin species. Below are a scatter plot and SPSS regression output for measurements made on 18 Gentoo penguins. Flipper length was measured in millimetres, and body mass in kilograms.**
+
+![Plot](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Assessment 3/Images/3.6Img1.png)
+![Table 1](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Assessment 3/Images/3.6Img2.png)
+![Table 2](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Assessment 3/Images/3.6Img3.png)
+
+**a.    Describe the apparent relationship between the Gentoo penguins' flipper length and body mass.**
+
+**b.    State the value of the correlation between the variables and explain how it supports the relationship you described in a.**
+
+**c.    Give the regression equation.**
+
+**d.    State the $R^2$ value and explain what it represents in this context.**
+
+
+##   Question 3.7
+
+**To conserve oxygen, the heart rate of penguins slows when they dive. For 23 Emperor penguins, researchers have measured the dive heart rate (bpm) and the duration of the dive (minutes) for each penguin. The researchers want to further explore a possible relationship between dive duration and heart rate to predict heart rate from the length of a penguin’s dive. Below are the data for each penguin:**
+
+```{r}
+  knitr::kable(Q3_7)
+```
+
+**Use SPSS or other technology to produce the output necessary to answer the following questions.**
+  
+**a.    Produce a scatterplot and use it to describe the apparent relationship between the dive duration and dive heart rate.**
+
+```{r}
+  plot(Q3_7$duration, Q3_7$heart.rate, main = "Dive Time vs. Heart Rate", xlab = "Duration (mins)", ylab = "Heart Rate (bpm)")
+```
+
+**b.    State the regression equation.**
+  
+$$
+  \begin{aligned}
+    \hat{y} = a + bx\\
+  \end{aligned}
+$$
+    
+**c.    Is it meaningful to interpret the y-intercept for this study? Explain.**
+
+      _The y-intercept for this study is > 0, therefore the findings of the study are more likely to be replicated in the real world._
+        
+**d.    Interpret the slope of the regression equation in the context of these variables.**
+
+      _The slope of this regression suggests that the heart rate of a penguin decreases at a predictable rate based on the duration spent under water_
+      
+**e.    Predict the heart rate of a penguin that dives for 16 minutes. Is this prediction reliable? Explain.**
+
+$$
+  \begin{aligned}
+    \hat{y} &= a + bx\\
+    &= 109.7535 + (-7.49 \times 16)\\
+    &= -10.08
+  \end{aligned}
+$$
+
+```{r}
+  lmrate <- lm(Q3_7$heart.rate ~ Q3_7$duration)
+  summary(lmrate)
+  a <- as.numeric(lmrate$coefficients[1])
+  b <- lmrate$coefficients[2]
+  x <- 16
+  
+result <- a + (b * x)
+```
+**f.    Is the relationship between the variables significant?**
+
+**Perform the relevant hypothesis test (include all steps) and write your conclusion in context. Use $\alpha = 0.05$.**

@@ -1,0 +1,229 @@
+---
+title: "Week 8 - Inference for one mean and paired means"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Inference for one mean
+
+**Finding t using R**
+
+Finding t* using the qt() function:
+
+a. A confidence level of 90%, and df = 10
+
+```{r}
+  sample1 <- qt(p=0.10/2, df=10, lower.tail=FALSE)
+  print(round(sample1, 2))
+```
+b. A confidence level of 98% and n = 15
+
+```{r}
+  sample2 <- qt(p=0.02/2, df=14, lower.tail=FALSE)
+  print(round(sample2, 2))
+```
+
+***
+
+>**Confidence interval example**
+>
+>  Consumer Reports tested 14 brands of vanilla yoghurt and found the following calories per 200g serving:
+>  
+>  160  200  220  230  120  180  140  130  170  190  80  120  100  170
+>
+>1. Create a 95% confidence interval for the average calorie content in 200g of vanilla yoghurt.
+>$$
+> \begin{aligned}
+>    \bar{x} &= 157.86\\
+>    s &= 44.75\\
+>    \\
+>    \bar{x} \pm t^{*}_{df} \times \frac{s}{\sqrt{n}} &= 157.86 \pm 2.16 \times \frac{44.18}{\sqrt{14}}\\
+>    &= 157.9 \pm 25.86\\
+>    &= 132.0, 183.8\\
+>  \end{aligned}
+>$$
+>    _i.e., we are 95% confident that the average calorie content ($\mu$) of all vanilla yoghurt is between 132.0 and 183.8 calories._
+>
+>
+>2. A diet guide claims that there are 120 calories in a 200g serving of vanilla yoghurt. What does this evidence indicate?
+>
+>    _Since 120 calories is not contained in the interval (120 is below the lower bound of 132), the evidence indicates that the diet guide is incorrect and a 200g serve of the >        yoghurt has significantly more than 120 calories._
+
+**GUIDED PRACTICE 7.12**
+
+Using the information and results of Guided Practice 7.10 and Example 7.11, compute a 90% confidence interval for the average mercury content of croaker white fish (Pacific).
+
+$$
+  \begin{aligned}
+    \bar{x} &= 0.287\\
+    s &= 0.069\\
+    df &= 15 - 1 = 14\\
+    \\
+    \bar{x} \pm t^{*}_{df} \times \frac{s}{\sqrt{n}} &= 0.287 \pm 1.76 \times \frac{0.069}{\sqrt{15}}\\
+    &=  0.287 \pm 0.0314\\
+    &= 0.256,\ 0.318\\
+  \end{aligned}
+$$
+  _We are 90% confident that the average mercury content of croaker white fish (Pacific) is between 0.256 and 0.318 ppm._
+
+**GUIDED PRACTICE 7.13**
+
+The 90% confidence interval from Guided Practice 7.12 is 0.256 ppm to 0.318 ppm. Can we say that 90% of croaker white fish (Pacific) have mercury levels between 0.256 and 0.318 ppm?
+
+  _No, a confidence interval only provides a range of plausible values for a population parameter, in this case the population mean. It does not describe what we might observe     for individual observations._
+  
+**Sample Question 2**
+
+A random sample of 25 people followed a particular diet for 6 weeks. Their average weight loss was 5.6kg with standard deviation 0.8kg. Construct a 95% confidence interval for the average weight loss for this diet.
+$$
+  \begin{aligned}
+    \bar{x} &= 5.6\\
+    s &= 0.8\\
+    \\
+    \bar{x} \pm t^{*}_{df} \times \frac{s}{\sqrt{n}} &= 5.6 \pm 2.06 \times \frac{0.8}{\sqrt{25}}\\
+    &=  5.6 \pm 0.3\\
+    &= 5.3,\ 5.9\\
+  \end{aligned}
+$$
+  _i.e., we are 95% confident that the average weight loss ($\mu$) for people following this diet is between 5.3 and 5.9 kg._
+  
+>## Inference for paired means
+>  
+>  $\bar{x}_d$ denotes the mean difference.
+>  $s_d$ denotes the standard deviation differences.
+>  
+>  **Hypotheses**
+>  $$
+>    \begin{aligned}
+>      H_0: \mu_d &= 0\\
+>      H_a: \mu_d &< 0\ OR\\
+>      \mu_d &< 0\ OR\\
+>      \mu_d &\neq 0\
+>    \end{aligned}
+>  $$
+
+>**Paired data**
+>
+>Which of the following situations would result in paired data:
+>
+>~~Comparing test results for one campus compared with another.~~
+>
+>$\checkmark$ Comparing individual students' Assignment 1 and 2 results.
+>
+>$\checkmark$ Investigating blood pressure change from a new drug.
+
+>**Assumptions & Conditions**
+>
+>Differences must be independant of each other.
+>
+>Population differences ($N$) need to be a normal (distribution) model.
+>
+>A large sample size ($n$) will help to ensure normality.
+>
+>Random samples will ensure independence.
+
+>**Confidence intervals for the mean difference ($\bar{x}_d$)**
+>$$
+>  \begin{aligned}
+>    point\ estimate\ \pm t^{*}_{df} \times \frac{s_d}{\sqrt{n}}
+>  \end{aligned}
+>$$
+>
+>- $t^{*}_{df}$ will depend on the specified confidence level (i.e. 90%) and on the degrees of freedom ($n - 1$), and can be obtained from:
+>   - t table
+>   - qt() function in R
+
+**t test statistic**
+
+$$
+  \begin{aligned}
+    t = \frac{\bar{x}-\mu_0}{\frac{s_d}{\sqrt{n}}}
+  \end{aligned}
+$$
+
+>**Hypotheses**
+>
+>A new drug designed to lower blood pressure is being trialed. A random sample of patients with high blood pressure took the drug for 6 weeks and their blood pressure was >recorded before taking the drug and at the end of the trial. Did their blood pressure decrease?
+>
+>Formulate the null and alternative hypotheses.
+>$$
+  \begin{aligned}
+    H_0: \mu_d &= 0\\
+    H_a: \mu_d &< 0\ (if\ d = after - before)\ OR\\
+    H_a: \mu_d &> 0\ (if\ d = before - after)\\
+  \end{aligned}
+>$$
+
+**Example**
+
+A group of 9 randomly selected adults were given self defence lessons. Prior to the course, they were tested to determine their self-confidence. After the course they were given the same test. A high score on the test indicates a high degree of self-confidence. The scores and their differences (after – before) are given in the table below.
+
+```{r, echo=FALSE}
+  confidence <- matrix(c(6,10,8,6,5,4,3,8,5,8,12,9,6,7,5,4,9,5,2,2,1,0,2,1,1,1,0),ncol=3,byrow=FALSE)
+  rownames(confidence) <- c("One","Two","Three","Four","Five","Six","Seven","Eight","Nine")
+  colnames(confidence) <- c("Before","After","Difference")
+  knitr::kable(confidence)
+```
+
+Note: $x_d=1.11$ and $s_d=0.78$
+
+a. Do the results indicate that the course significantly increases the self-confidence of adults? Use $\alpha=0.01$.
+
+$$
+  \begin{aligned}
+    H_0: \mu_d &= 0\\
+    H_a: \mu_d &> 0\\
+    \\
+    t &= \frac{\bar{x}_d - \mu_0}{\frac{s}{\sqrt{n}}} = \frac{1.11 - 0}{\frac{0.78}{\sqrt{9}}}\\
+    &= 4.27
+  \end{aligned}
+$$
+P-value < 0.005
+
+Since P-value $< \alpha$, reject $H_0$.
+
+There is evidence that the self defence lessons significantly increase self-confidence in adults.
+
+b.i. Calculate a 98% confidence for the true mean difference between the scores.
+
+$$
+  \begin{aligned}
+    \bar{x} &= 1.11\\
+    s &= 0.78\\
+    \\
+    \bar{x} \pm t^{*}_{df} \times \frac{s}{\sqrt{n}} &= 1.11 \pm 2.9 \times \frac{0.78}{\sqrt{9}}\\
+    &=  1.11 \pm 0.754\\
+    &= 0.36,\ 1.86\\
+  \end{aligned}
+$$
+
+  _We are 98% sure than the true mean increase in self-confidence is between 0.36 and 1.86._
+
+b.ii. Comment on your result in relation to your conclusion from a).
+  _The confidence interval supports the hypothesis test result since 0 (no difference) is not contained in the interval and we rejected the null hypothesis that there was no     difference in self-confidence due to the self defence lessons._
+
+>**Paired data activity**
+>
+>Complete the following questions with software or by hand.
+>
+>Twelve males aged between 13 and 16 were asked to self-report their height (in cm). Their heights were then measured. Is there sufficient evidence to support the claim that >there is a difference between self-reported and measured heights for males in this age group?
+
+```{r, echo=FALSE}
+  height <- matrix(c(173.0,180.0,160.0,178.0,180.0,152.0,165.0,162.0,137.0,160.0,168.0,183.0,172.5,177.5,164.8,173.5,178.6,153.9,163.8,170.2,141.2,188.5,165.1,179.8),ncol=2,byrow=FALSE)
+  colnames(height) <- c("Reported","Mesured")
+  knitr::kable(height)
+```
+>
+>Note: $x_d=−2.617$ and $s_d=8.997$ (with d = reported − measured)
+>
+>a. Carry out a hypothesis test and use a 5% level of significance. 
+>
+>b. Report a 95% confidence interval to estimate the mean difference between reported heights and measured heights.
+>
+>c. How does your interval support your decision from the hypothesis test?
+>

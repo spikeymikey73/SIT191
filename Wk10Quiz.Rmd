@@ -7,11 +7,12 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-Q3 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk10/Q3.csv", header = TRUE, sep = ",")
-Q5 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk10/Q5.csv", header = TRUE, sep = ",")
-Q7 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk10/Q7.csv", header = TRUE, sep = ",")
-Q8 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk10/Q8.csv", header = TRUE, sep = ",")
-Q10 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk10/Q10.csv", header = TRUE, sep = ",")
+
+Q3 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk10/Q3.csv", header = TRUE, sep = ",")
+Q5 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk10/Q5.csv", header = TRUE, sep = ",")
+Q7 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk10/Q7.csv", header = TRUE, sep = ",")
+Q8 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk10/Q8.csv", header = TRUE, sep = ",")
+Q10 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk10/Q10.csv", header = TRUE, sep = ",")
 ```
 
 **Question 1**

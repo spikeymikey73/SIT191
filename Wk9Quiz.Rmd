@@ -5,11 +5,11 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-Q3 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk9/Q3.csv", row.names = 1, header = TRUE, sep = ",")
-Q5 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk9/Q5.csv", header = TRUE, sep = ",")
-Q8 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk9/Q8.csv", header = TRUE, sep = ",")
-Q9 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk9/Q9.csv", row.names = 1, header = TRUE, sep = ",")
-Q14 <- read.csv("/Users/malford/Documents/BPscyhSci/SIT191/Data/Wk9/Q14.csv", header = TRUE, sep = ",")
+Q3 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk9/Q3.csv", row.names = 1, header = TRUE, sep = ",")
+Q5 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk9/Q5.csv", header = TRUE, sep = ",")
+Q8 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk9/Q8.csv", header = TRUE, sep = ",")
+Q9 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk9/Q9.csv", row.names = 1, header = TRUE, sep = ",")
+Q14 <- read.csv("~/Documents/BPsychSci/SIT191/Data/Wk9/Q14.csv", header = TRUE, sep = ",")
 ```
 
 **Question 1**

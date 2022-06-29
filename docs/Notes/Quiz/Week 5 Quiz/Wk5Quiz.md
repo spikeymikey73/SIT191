@@ -1,0 +1,278 @@
+**Question 1**
+
+Assume in females the length of the fibula bone is normally distributed, with a mean of 35 cm and a standard deviation of 2 cm.
+
+In what interval would you expect the central 99.7% of fibula lengths to be found?
+Use the 68-95-99.7% rule only, not z tables or calculations.
+
+[Enter integers/whole numbers only]
+
+*29cm to 41cm*
+
+![Q1_NormDist](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Quiz/Week 5 Quiz/Images/Q1_NormDist.png)
+
+
+
+**Question 2**
+
+A standardised test with normally distributed scores has a mean of 100 and a standard deviation of 15.
+
+About what percentage of participants should have scores above 115?
+
+Use the 68-95-99.7% rule only, not z tables or calculations.
+
+[Enter as a percentage to 1 decimal place, e.g. 45.1, without the % sign]
+
+**Answer:** *16%*
+
+![Q2_Above](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Quiz/Week 5 Quiz/Images/Q2_Above.png)
+
+```
+```
+
+
+
+
+
+**Question 3**
+
+Assume in males the length of the femur bone is normally distributed, with a mean of 46 cm and a standard deviation of 3 cm.
+
+What percentage of males should have a femur shorter than 41.7 cm?
+
+[Enter as a percentage to 1 decimal place, e.g. 24.8, without the % sign]
+
+**Answer:** *7.6*%
+
+![Q3_Below](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Quiz/Week 5 Quiz/Q3_Below.png)
+
+```R
+> round(pnorm(41.7, 46, 3) * 100, 1)
+[1] 7.6
+```
+
+
+
+
+
+**Question 4**
+
+Based on the Normal model *N*(35, 2) describing female fibula length (in cm), what percent of females would you expect to have fibula between 31.3 and 34.7 cm?
+
+[Enter as a percentage to 1 decimal place, e.g. 45.2, without the % sign]
+
+**Answer:** *40.8*%
+
+![Q4_between](/Users/malford/Documents/BPscyhSci/SIT191 - Statistics/Notes/Quiz/Week 5 Quiz/Q4_between.png)
+
+
+
+```R
+> upper <- pnorm(34.7, 35, 2)
+> upper
+[1] 0.4403823
+
+> lower <- pnorm(31.3, 35, 2)
+> lower
+[1] 0.03215677
+
+> interval <- upper - lower
+> round(interval * 100, 1)
+[1] 40.8
+```
+
+
+
+
+
+**Question 5**
+
+Based on the Normal model *N*(100, 15) describing IQ scores, what is the cut off IQ score for the lowest 10% of the IQs?
+
+(enter correct to the nearest **whole number**, e.g. 26)
+
+**Answer:**  _81_
+
+```
+> round(qnorm(0.10, 100, 15))
+[1] 81
+```
+
+
+
+**Question 6**
+
+In a particular rural area of Victoria, 52% of learner drivers pass their driving test on the first attempt.
+
+**If 6 learner drivers are selected, what is the probability of a successful driving test outcome for all 6 drivers (on their first attempts)?**
+
+[Enter your answer correct to 3 decimal places]
+
+**Answer:** 0.020
+$$
+p^n &= {n \choose n}p^n(1-p)^0\\
+&= {6 \choose 6}0.52^6(1 - 0.52)^0\\
+&= 1 \times 0.019770609 \times 1
+$$
+```R
+> round(dbinom(6, size=6, prob=0.52), 3)
+[1] 0.02
+```
+
+
+
+**Question 7**
+
+Suppose 70% of the population have brown eyes, 15% have blue eyes, 6% have hazel eyes, 7% have green eyes and the rest 'other' (including grey).
+
+Among 7 randomly selected people, what is the probability that exactly 4 people have blue eyes?
+
+- [ ] 0.001
+- [ ] 0.6
+- [x] 0.011
+- [ ] 3.11
+- [ ] 0.227
+
+```R
+> round(dbinom(4, size=7, prob=0.15), 3)
+[1] 0.011
+```
+
+
+
+**Question 8**
+
+Suppose 72% of adults have travelled overseas.
+
+**If 6 adults are randomly selected, what is the probability that 3 or 4 of them have travelled overseas?**
+
+[Enter your answer correct to 3 decimal places]
+
+**Answer:** *0.480*
+
+```R
+> round(dbinom(4, size=6, prob=0.72) + dbinom(3, size=6, prob=0.72), 3)
+[1] 0.48
+```
+
+
+
+**Question 9**
+
+In a particular rural area of Victoria, 80% of learner drivers pass their driving test on the first attempt.
+
+**If 6 learner drivers are selected, what is the probability of a successful driving test outcome for at least 2 drivers?**
+
+[Enter your answer correct to 3 decimal places]
+
+**Answer:** *0.998*
+
+Here it's easier to calculate the probability of none passing, of 1 passing, and then take the complement of this (which includes all outcomes that have 2 or more passing). 
+
+The probability of none passing is
+
+$(1−p)^6$
+
+The probability of exactly 1 passing is
+
+${6 \choose 1}p^1(1−p)^5 = 6p(1−p)^5$
+
+and then subtracting both of these from 1 gives the final answer.
+
+```
+> 1 - (dbinom(0, size=6, prob=0.8) + dbinom(1, size=6, prob=0.8))
+[1] 0.9984
+```
+
+
+
+**Question 10**
+
+For a particular rural area, 81% of learner drivers pass their driving test on the first attempt.  Suppose 130 drivers are randomly sampled from the population.
+
+**How many of the drivers would you expect to pass the test on their first attempt?**
+
+[give your answer to the nearest integer]
+
+**Answer:** *105*
+
+We can assume that each of the drivers selected is close enough to independent and that the number of drivers sampled is less than 10% of the population. Also we have $np > 10$ and $nq > 10$.
+
+Therefore to calculate the mean, we can use $np$.
+
+```
+> np <- 130 * 0.81
+> round(np, 0)
+[1] 105
+```
+
+
+
+**Question 11**
+
+A particular airline arrives on schedule 73% of the time.  Suppose an audit which looks at a random 110 flights is conducted.
+
+**Calculate the standard deviation for the number of on-time flights from samples of 110 audited flights?**
+
+[give your answer to 2 decimal places]
+
+**Answer:** *4.66*
+
+$$
+= \sqrt{npq}\\
+= \sqrt{110 \times 0.73 \times 0.27}\\
+= 4.66
+$$
+
+```
+> n <- 110
+> p <- 0.73
+> q <- 1 - p
+> round(sqrt(n*p*q), 2)
+[1] 4.66
+```
+
+
+
+**Question 12**
+
+A particular airline arrives on schedule 89% of the time.  Suppose an audit which looks at a random 160 flights is conducted. 
+
+**What is the probability that more than 150 of the flights audited would be on time?
+Use a _normal approximation_ to the binomial model.**
+
+[give your answer as a decimal to 3 decimal places, e.g. 0.045]
+
+**Answer:** *0.027*
+
+We can assume that each of the flights is close enough to independent and that the number of audited flights is less than 10% of the population. 
+
+Also we have np > 10 and nq > 10.Therefore to calculate the mean, we can use $np$.
+
+$160 \times 0.89 = 142.4$
+
+Then to calculate the standard deviation, we have $\sqrt{npq}
+$$
+\sqrt{npq}\\
+160 \times 0.89 \times 0.11\\
+\approx 3.96\\
+$$
+Then using a normal model, $N(142.4, 3.96)$ we can work out the probability of having a value greater than 150
+$$
+z = \frac{150−142.4}{3.96}\\
+≈1.92
+$$
+
+
+From a z-table, $P(z<1.92) = 0.9726$ and therefore, since we're looking for the probability of **more** than 150 being on time, we calculate $1 - 0.9726 = 0.027$
+
+```R
+> n <- 160
+> p <- 0.89
+> q <- 1 - p
+> sd = sqrt(n*p*q)
+> testVal <- 150
+> mean <- n * p
+> round(1 - pnorm(testVal, mean, sd), 3)
+[1] 0.027
+```

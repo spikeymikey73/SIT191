@@ -1,7 +1,8 @@
 name: "SIT191"
+output_dir: "docs"
 navbar:
   title: "SIT191"
-  right:
+  left:
     - text: "Week 1"
       href: index.html
     - text: "Week 2"

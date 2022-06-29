@@ -1,0 +1,12 @@
+---
+title: "Formulae"
+output: html_document
+---
+
+|                 |Confidence Interval                                         |Test statistic and Hypotheses                                |
+        | ----------------|------------------------------------------------------------|------------------------------------------------------------ |
+        |**1 Prop**|$$\hat{p} \pm z^* \times \sqrt{\frac{\hat{p}\hat{q}}{n}}$$<br><br>```prop.test(x=12, n=79, p=0.14, alternative=“greater”, correct=FALSE)```|$$z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0q_0}{n}}}\\\\H_0: p = p_0\\H_a: p \ne p_0\ or\ p > p_0\ or\ p < p_0$$|
+        |**1 Mean**|$$\bar{x} \pm t^*_{n-1} \times \frac{s}{\sqrt{n}}$$<br><br>`t.test(vlt$prize, mu=13.13, alternative="less”, conf.level=0.90)`|$$t = \frac{\bar{x}-\mu_0}{\frac{s}{\sqrt{n}}}\\\\H_0: \mu=\mu_0\\H_a: \mu \ne \mu_0\ or\ \mu > \mu_0\ or\ \mu < \mu_0$$|
+        |**2 Prop**|$$(p_1 - p_2) \pm z^* \times \sqrt{\frac{\hat{p}_1\hat{q}_1}{n_1} + \frac{\hat{p}_2\hat{q}_2}{n_2}}$$<br><br>`prop.test(x=c(467, 407), n=c(667, 558), alternative="two.sided", correct=FALSE)`|$$z = \frac{p_1 - p_2}{\sqrt{\frac{\hat{p}_{pooled}\hat{q}_{pooled}}{n_1}}+\frac{\hat{p}_{pooled}\hat{q}_{pooled}}{n_2}}\\\\H_0: p_1 =p_2\ or\ p_1 - p_2=0\\H_a: p_1\ne p_2\ or\ p_1>p_2\ or\ p_1<p_2$$|
+        |**2 Means**|$$(\bar{x}_1-\bar{x}_2) \pm t^*_{n_1+n_2-2} \times \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$$<br><br>`t.test(Moore$conformity[Moore$partner.status=="high"], Moore$conformity[Moore$partner.status=="low"], alternative="greater", var.equal=TRUE)`|$$t = \frac{\bar{x}_1-\bar{x}_2}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\\\\H_0: \mu_1 = \mu_2\ or\ \mu_1 - \mu_2 =0\\H_a: \mu_1 \ne \mu_2\ or\ \mu_1>\mu_2\ or\ \mu_1 < \mu_2$$|
+        |**Paired Means**|$$\bar{d} \pm t^*_{n-1} \times \frac{s_d}{\sqrt{n}}$$<br><br>`t.test(x=sleep$extra[sleep$group==1], y=sleep$extra[sleep$group==2], alternative="two.sided", paired=TRUE)`|$$t = \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}}\\\\H_0: \mu_d=0\\H_a:\mu_d \ne0\ or\ \mu_d >0\ or\ \mu_d <0$$|
